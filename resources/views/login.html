@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="/public/css/login.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<title>Login</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">S+</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form id="login" class="form-horizontal" method="post" action="{{ path_for('login.submit') }}">
+						{{ csrf.field | raw }}
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" placeholder="Enter your username"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="email"  placeholder="Enter your password"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Login</button>
+						</div>
+						
+						<div class="form-group login-register">
+				            <a href="index.php" >Forgotten account?</a> | <a href="{{ path_for('register.view') }}">Register</a>
+				       	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="{{ base_url() }}/public/js/login.js"></script>
+	</body>
+</html>
